@@ -17,23 +17,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Create an instance of the floating animation
-        val floatAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.float_up_down1)
-        val scaleAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.scale_up_down)
+        val floatAnimation1: Animation = AnimationUtils.loadAnimation(this, R.anim.float_up_down1)
+        val floatAnimation2: Animation = AnimationUtils.loadAnimation(this, R.anim.float_up_down2)
 
 
         // Set floating animation on Park Buddy logo ImageView
         val parkBuddyLogo = findViewById<ImageView>(R.id.park_buddy_logo)
-        parkBuddyLogo.startAnimation(floatAnimation)
+        parkBuddyLogo.startAnimation(floatAnimation1)
 
         val poweredBy = findViewById<TextView>(R.id.powered_by)
-        poweredBy.startAnimation(floatAnimation)
+        poweredBy.startAnimation(floatAnimation1)
 
         val idTechLogo = findViewById<ImageView>(R.id.idtech_logo)
-        idTechLogo.startAnimation(floatAnimation)
+        idTechLogo.startAnimation(floatAnimation1)
 
-//        // Set floating animation on Tap to Get Started TextView
-//        val tapToGetStartedText = findViewById<TextView>(R.id.tapToGetStarted)
-//        tapToGetStartedText.startAnimation(scaleAnimation)
+        val topBackground = findViewById<ImageView>(R.id.rectangle_background_top)
+        topBackground.startAnimation(floatAnimation2)
+
+        val middleBackground = findViewById<ImageView>(R.id.rectangle_background_middle_2)
+        middleBackground.startAnimation(floatAnimation1)
+
+        val bottomBackground = findViewById<ImageView>(R.id.rectangle_background_bottom)
+        bottomBackground.startAnimation(floatAnimation2)
 
         // Set an OnClickListener on the root view to detect clicks anywhere on the screen
         val rootView = findViewById<View>(android.R.id.content)
